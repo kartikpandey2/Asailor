@@ -1,0 +1,21 @@
+header {
+  background: white;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
+  height: 13vh;
+  z-index: 100;
+}
+
+.header-container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0.8rem 1.0875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .navlinks {
+    display: none;
+  }
+}

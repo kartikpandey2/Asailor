@@ -1,32 +1,53 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import logo from "../images/logo.jpeg"
+import { Button } from "antd"
+import "../css/header.css"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+const styles = {
+  link: {
+    color: `Black`,
+    textDecoration: `none`,
+    margin: "0 0.5rem",
+  },
+  button: {
+    margin: "0 0.5rem",
+  },
+  h4: {
+    display: "inline",
+  },
+}
+
+const Header = () => (
+  <header>
+    <div className="header-container">
+      <span>
+        <Link to="/" style={styles.link}>
+          <img
+            src={logo}
+            style={{ height: "50px", width: "50px" }}
+            alt="logo"
+          />
+          <h4 style={{ display: "inline", marginLeft: "0.5rem" }}>Asailor</h4>
         </Link>
-      </h1>
+      </span>
+      <span>
+        <span className="navlinks">
+          <Link to="/packages" style={styles.link}>
+            <h4 style={styles.h4}>Packages</h4>
+          </Link>
+          <Link to="/" style={styles.link}>
+            <h4 style={styles.h4}>Why Us</h4>
+          </Link>
+          <Link to="/" style={styles.link}>
+            <h4 style={styles.h4}>Contact Us</h4>
+          </Link>
+        </span>
+        <span>
+          <Button style={styles.button}>Plan my Trip</Button>
+        </span>
+      </span>
     </div>
   </header>
 )
